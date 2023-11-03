@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Login</title>
+    <link rel="stylesheet" href="style/stylee.css" />
+  </head>
+  <body>
+    <h2>Form Login</h2>
+    <form id="loginForm">
+      <label for="username" class="custom-label">Username:</label>
+      <input type="text" id="username" name="username" required /><br /><br />
+
+      <label for="password" class="custom-label">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+      /><br /><br />
+
+      <input type="submit" value="Login" />
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Mengganti dengan username dan password yang benar
+          const validUsername = "admin";
+          const validPassword = "admin123";
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          if (username === validUsername && password === validPassword) {
+            // Redirect ke halaman lain (ganti URL sesuai kebutuhan)
+            window.location.href = "web.html";
+          } else {
+            document.getElementById("message").innerHTML =
+              "Username atau password salah. Silakan coba lagi.";
+          }
+        });
+    </script>
+  </body>
+</html>
